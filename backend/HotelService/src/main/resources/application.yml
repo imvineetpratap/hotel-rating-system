@@ -13,7 +13,7 @@ server:
 #    hibernate:
 #      ddl-auto: update
 #    show-sql: true
-#   
+#
 
 spring:
   datasource:
@@ -30,3 +30,13 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: Hotel-service-1
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
