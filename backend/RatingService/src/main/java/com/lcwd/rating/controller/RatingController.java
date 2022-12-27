@@ -32,12 +32,12 @@ public class RatingController {
 	public  ResponseEntity<List<Rating>> getAllRatings(){
 		return  ResponseEntity.status(HttpStatus.OK).body(ratingService.getRatings());
 	}
-	
+	//get ratings of user by user id
 	@GetMapping("/users/{userId}")
 	public  ResponseEntity<List<Rating>> getAllRatingsByUserId(@PathVariable String userId){
 		return  ResponseEntity.status(HttpStatus.OK).body(ratingService.getRatingByUserId(userId));
 	}
-	
+	//get ratings of hotels by hotel id
 	@GetMapping("/hotels/{hotelId}")
 	public  ResponseEntity<List<Rating>> getAllRatingsByHotelId(@PathVariable String hotelId){
 		return  ResponseEntity.status(HttpStatus.OK).body(ratingService.getRatingByHotelId(hotelId));
