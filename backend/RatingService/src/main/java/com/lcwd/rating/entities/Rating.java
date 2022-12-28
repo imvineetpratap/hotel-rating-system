@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import com.lcwd.rating.entities.Hotel;
+
 
 @Entity
 @Getter
@@ -20,5 +20,5 @@ public class Rating {
 	private String hotelId;
 	private int rating;
 	private String feedback;
-	private Hotel hotel;
+
 }
