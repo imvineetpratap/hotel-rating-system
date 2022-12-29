@@ -15,8 +15,8 @@ public class RatingServiceImpl implements RatingService{
 	@Override
 	public Rating create(Rating rating) {
 		// TODO Auto-generated method stub
-		String randomRatingID=UUID.randomUUID().toString();
-	      rating.setRatingId(randomRatingID);
+//		String randomRatingID=UUID.randomUUID().toString();
+//	      rating.setRatingId(randomRatingID);
 		return ratingrepo.save(rating);
 	}
 

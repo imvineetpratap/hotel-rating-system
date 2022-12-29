@@ -1,18 +1,19 @@
 package com.lcwd.rating.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Document("user_ratings")
 public class Rating {
 	@Id
 	private String ratingId;
