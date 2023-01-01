@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.lcwd.rating.entities.Rating;
 import com.lcwd.rating.repositories.RatingRepository;
@@ -37,5 +38,22 @@ public class RatingServiceImpl implements RatingService{
 		// TODO Auto-generated method stub
 		return ratingrepo.findByHotelId(hotelId);
 	}
+
+	@Override
+	public Rating update(Rating rating) {
+		if (ratingrepo.findById(rating.getRatingId()) != null) {
+			 ratingrepo.save(rating);
+			return rating;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	@Override
+	public void delete(String ratingId) {
+		this.ratingrepo.deleteById(ratingId);
+	}
+
 
 }
