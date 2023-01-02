@@ -41,12 +41,12 @@ public class RatingServiceImpl implements RatingService{
 
 	@Override
 	public Rating update(Rating rating) {
-		if (ratingrepo.findById(rating.getRatingId()) != null) {
+		if (ratingrepo.findById(rating.getRatingId()).isPresent()) {
 			 ratingrepo.save(rating);
 			return rating;
 		}
 		else {
-			throw new IllegalArgumentException();
+			return null;
 		}
 	}
 
