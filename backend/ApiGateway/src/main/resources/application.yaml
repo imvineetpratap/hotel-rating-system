@@ -20,15 +20,16 @@ spring:
           uri: lb://MY-HOTEL-SERVICE
           predicates:
             - Path=/hotels/**,/staff/**
+  config:
+    import: optional:configserver:http://localhost:8085
 
 
-
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
 
