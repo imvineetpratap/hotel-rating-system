@@ -33,3 +33,18 @@ spring:
 #  instance:
 #    prefer-ip-address: true
 
+
+
+
+
+
+
+
+#okata config
+okta:
+  oauth2:
+    issuer: https://dev-68083666.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oa83iogezVgZOmKI5d7
+    client-secret: zjC6C8f-pX0lCGWUk3pdz2P8D8-Gsy5JnnVSB6m5
+    scopes: openid, profile, email, offline_access
