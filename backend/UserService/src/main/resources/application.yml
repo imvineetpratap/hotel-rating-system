@@ -8,7 +8,6 @@ spring:
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,8 +17,28 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   application:
     name: user-service-1
+#    configurations settings
   config:
     import: optional:configserver:http://localhost:8085
+  #spring security config
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-68083666.okta.com/oauth2/default
+      client:
+          registration:
+            my-internal-client:
+              provider: okta
+              authorization-grant-type: client_credentials
+              scope: internal
+              client-id: 0oa83iogezVgZOmKI5d7
+              client-secret: zjC6C8f-pX0lCGWUk3pdz2P8D8-Gsy5JnnVSB6m5
+
+
+          provider:
+              okta:
+                issuer-uri: https://dev-68083666.okta.com/oauth2/default
 #  profiles:
 #    active: prod
 #eureka:
@@ -30,6 +49,10 @@ spring:
 #      defaultZone: http://localhost:8761/eureka/
 #  instance:
 #    prefer-ip-address: true
+
+
+
+
 
 #health config
 management:
@@ -73,7 +96,8 @@ resilience4j:
 
 
 
-
-
-
-
+#okta config
+okta:
+  oauth2:
+    issuer: https://dev-68083666.okta.com/oauth2/default
+    audience: api://default
